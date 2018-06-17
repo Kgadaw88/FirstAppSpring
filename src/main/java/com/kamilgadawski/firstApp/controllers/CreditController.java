@@ -24,8 +24,10 @@ public class CreditController {
     public String credit (@ModelAttribute CreditForm creditForm) {
 
         if (creditForm.getZarobki() - creditForm.getWydatki() > (creditForm.getWnioskowanaKwota() / creditForm.getMiesiace()) * 0.3 ){
-            return "Dostałem kredyt";
+//            model.addAttribute("kredyt", true);
+            return "kredyt";
         }
-        return "Jesteś za bidny";
+//        model.addAttribute("kredyt", false);
+        return "kredyt";
     }
 }

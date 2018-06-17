@@ -2,16 +2,49 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
     <title>Formularz Kredytowy</title>
 </head>
 <body>
 
+<!--<span th:style="'color: ' + (${kredyt ? 'green' : 'red'})"></span> -->
+
 <form method="post" action="/kredyt" th:object="${kredyt}">
-    Miesięczne zarobki: <input type="text" th:field="*{zarobki}"> <br/>
-    Miesięczne wydatki: <input type="text" th:field="*{wydatki}"> <br/>
-    Wnioskowane na miesięcy: <input type="text" th:field="*{miesiace}"><br/>
-    Wnioskowana kwota: <input type="text" th:field="*{wnioskowanaKwota}"><br/>
-    <input type="submit" value="Sprawdź">
+    <div class="row">
+        <div class="form-group col-lg-2">
+            <label>Miesięczne zarobki: </label>
+            <input type="text" class="form-control" th:field="*{zarobki}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-2">
+            <label>Miesięczne wydatki: </label>
+            <input class="form-control" type="text" th:field="*{wydatki}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-2">
+            <label>Wnioskowane na miesięcy: </label>
+            <input class="form-control" type="text" th:field="*{miesiace}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-2">
+            <label>Wnioskowana kwota: </label>
+            <input class="form-control" type="text" th:field="*{wnioskowanaKwota}">
+        </div>
+    </div>
+    <input class="btn btn-success" type="submit" value="Sprawdź">
 </form>
+</div>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

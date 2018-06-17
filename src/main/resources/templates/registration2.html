@@ -7,10 +7,19 @@
 <body>
 
 <form method="post" action="/registration2" th:object="${registerForm}">
+
+    <span th:if="${#fields.hasErrors('login')}" th:errors="*{login}"></span><br/>
     Podaj Login: <input type="text" th:field="*{login}"> <br/>
+
+    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span><br/>
     Hasło: <input type="password" th:field="*{password}"> <br/>
+
+    <span th:if="${#fields.hasErrors('passwordRepeat')}" th:errors="*{passwordRepeat}"></span><br/>
     Powtórz Hasło: <input type="password" th:field="*{passwordRepeat}"><br/>
+
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span><br/>
     E-mail: <input type="email" th:field="*{email}"><br/>
+
     <input type="submit" value="Zaloguj">
 </form>
 </body>
